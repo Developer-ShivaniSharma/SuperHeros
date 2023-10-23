@@ -18,9 +18,9 @@ val Typography = Typography(
     bodyLarge = TextStyle(
         fontFamily = Cabin,
         fontWeight = FontWeight.Normal,
-        fontSize = 16.sp,
-        lineHeight = 24.sp,
-        letterSpacing = 0.5.sp
+        fontSize = 12.sp,
+       // lineHeight = 24.sp,
+      //  letterSpacing = 0.5.sp
     ),
     displayLarge = TextStyle(
         fontFamily = Cabin,
@@ -35,6 +35,6 @@ val Typography = Typography(
     displaySmall = TextStyle(
         fontFamily = Cabin,
         fontWeight = FontWeight.Bold,
-        fontSize = 20.sp
+        fontSize = 14.sp
     )
 )
