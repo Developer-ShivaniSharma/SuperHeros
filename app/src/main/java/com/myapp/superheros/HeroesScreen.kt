@@ -31,8 +31,20 @@ import com.myapp.superheros.model.HeroesRepository
 import com.myapp.superheros.ui.themeimport.SuperheroesTheme
 
 @Composable
-fun HeroScreenList() {
-    HeroList(heroList = HeroesRepository.heroes)
+fun HeroScreenList(modifier: Modifier = Modifier) {
+    HeroList(
+        heroList = HeroesRepository.heroes,
+        modifier = modifier
+    )
+}
+
+@Composable
+fun HeroList(heroList: List<Hero>, modifier: Modifier = Modifier) {
+    LazyColumn(modifier = modifier.padding(16.dp)) {
+        items(heroList) { hero ->
+            HeroDetails(hero = hero, modifier = Modifier.padding(8.dp))
+        }
+    }
 
 }
 
@@ -69,16 +81,6 @@ fun HeroDetails(hero: Hero, modifier: Modifier = Modifier) {
     }
 }
 
-@Composable
-fun HeroList(heroList: List<Hero>, modifier: Modifier = Modifier) {
-    LazyColumn(modifier = modifier.padding(16.dp)) {
-        items(heroList) { hero ->
-            HeroDetails(hero = hero, modifier = Modifier.padding(8.dp))
-
-        }
-    }
-
-}
 
 @Preview("Light Theme")
 @Composable
